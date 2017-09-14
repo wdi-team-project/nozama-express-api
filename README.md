@@ -1,6 +1,7 @@
 # Nozama - Back End API
 Team Project By:
 - Ash Trull
+- Will Britton
 
 ## Introduction
 
