@@ -1,133 +1,133 @@
 // insert Document
 db.products.insertMany(
   [{
-    title: 'lizard',
-    price: 23,
+    title: 'Lizard',
+    price: 23.99,
     imageLink: 'https://i.imgur.com/qIwuJ2A.jpg'
   },
   {
-    title: 'kiwi',
-    price: 1,
+    title: 'Kiwi',
+    price: 1.99,
     imageLink: 'https://i.imgur.com/p1GyaV9.jpg'
   },
   {
-    title: 'elderberry',
-    price: 2,
+    title: 'Elderberry',
+    price: 2.99,
     imageLink: 'https://i.imgur.com/klHerK7.jpg'
   },
   {
-    title: 'papaya',
-    price: 3,
+    title: 'Papaya',
+    price: 3.99,
     imageLink: 'https://i.imgur.com/gYUVIBN.jpg'
   },
   {
-    title: 'pomegranate',
-    price: 4,
+    title: 'Pomegranate',
+    price: 4.99,
     imageLink: 'https://i.imgur.com/9LHRLOA.jpg'
   },
   {
-    title: 'watermelon',
-    price: 5,
+    title: 'Watermelon',
+    price: 5.99,
     imageLink: 'https://i.imgur.com/v2xjqGO.jpg'
   },
   {
-    title: 'apple',
-    price: 6,
+    title: 'Apple',
+    price: 6.99,
     imageLink: 'https://i.imgur.com/jnCJL9l.jpg'
   },
   {
-    title: 'peach',
-    price: 7,
+    title: 'Peach',
+    price: 7.99,
     imageLink: 'https://i.imgur.com/XWywUHL.jpg'
   },
   {
-    title: 'banana',
-    price: 8,
+    title: 'Banana',
+    price: 8.99,
     imageLink: 'https://i.imgur.com/iGkke3p.jpg'
   },
   {
-    title: 'pineapple',
-    price: 9,
+    title: 'Pineapple',
+    price: 9.99,
     imageLink: 'https://i.imgur.com/sXBEQKx.jpg'
   },
   {
-    title: 'strawberry',
-    price: 10,
+    title: 'Strawberry',
+    price: 10.99,
     imageLink: 'https://i.imgur.com/S8zCxmi.jpg'
   },
   {
-    title: 'grape',
-    price: 11,
+    title: 'Grape',
+    price: 11.99,
     imageLink: 'https://i.imgur.com/f0B6O9y.jpg'
   },
   {
-    title: 'pear',
-    price: 12,
+    title: 'Pear',
+    price: 12.99,
     imageLink: 'https://i.imgur.com/IPYklYx.jpg'
   },
   {
-    title: 'broccoli',
-    price: 1,
+    title: 'Broccoli',
+    price: 1.99,
     imageLink: 'https://i.imgur.com/vQvB9zw.jpg'
   },
   {
-    title: 'mushroom',
-    price: 2,
+    title: 'Mushroom',
+    price: 2.99,
     imageLink: 'https://i.imgur.com/0Yd42au.jpg'
   },
   {
-    title: 'celery',
-    price: 2,
+    title: 'Celery',
+    price: 2.99,
     imageLink: 'https://i.imgur.com/0qip3mk.jpg'
   },
   {
-    title: 'avocado',
-    price: 3,
+    title: 'Avocado',
+    price: 3.99,
     imageLink: 'https://i.imgur.com/ucVxRCD.jpg'
   },
   {
-    title: 'icebergLettuce',
-    price: 4,
+    title: 'Iceberg Lettuce',
+    price: 4.99,
     imageLink: 'https://i.imgur.com/XMCbENG.jpg'
   },
   {
-    title: 'zucchini',
-    price: 5,
+    title: 'Zucchini',
+    price: 5.99,
     imageLink: 'https://i.imgur.com/EW7Wymg.jpg'
   },
   {
-    title: 'sweetPotato',
-    price: 6,
+    title: 'Sweet Potato',
+    price: 6.99,
     imageLink: 'https://i.imgur.com/iMnLukL.jpg'
   },
   {
-    title: 'cucumber',
-    price: 7,
+    title: 'Cucumber',
+    price: 7.99,
     imageLink: 'https://i.imgur.com/dTMWk6U.jpg'
   },
   {
-    title: 'okra',
-    price: 8,
+    title: 'Okra',
+    price: 8.99,
     imageLink: 'https://i.imgur.com/8YmTxbB.jpg'
   },
   {
-    title: 'beetRoot',
-    price: 9,
+    title: 'Beet Root',
+    price: 9.99,
     imageLink: 'https://i.imgur.com/GcwQ8ew.jpg'
   },
   {
-    title: 'asparagus',
-    price: 10,
+    title: 'Asparagus',
+    price: 10.99,
     imageLink: 'https://i.imgur.com/NSqv6uA.jpg'
   },
   {
-    title: 'redCabbage',
-    price: 11,
+    title: 'Red Cabbage',
+    price: 11.99,
     imageLink: 'https://i.imgur.com/9R6IAMz.jpg'
   },
   {
-    title: 'greenBean',
-    price: 12,
+    title: 'Green Bean',
+    price: 12.99,
     imageLink: 'https://i.imgur.com/npujlFu.jpg'
   }
   ]
