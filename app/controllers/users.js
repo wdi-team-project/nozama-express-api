@@ -108,13 +108,25 @@ const changepw = (req, res, next) => {
   ).catch(makeErrorHandler(res, next))
 }
 
+const addproduct = (req, res, next) => {
+  User.findOne({
+    _id: req.params.id,
+    token: req.user.token
+  }).then(user =>
+    console.log(user) +
+    console.log(user._id) +
+    console.log(user.token)
+  ).catch(next)
+}
+
 module.exports = controller({
   index,
   show,
   signup,
   signin,
   signout,
-  changepw
+  changepw,
+  addproduct
 }, { before: [
   { method: authenticate, except: ['signup', 'signin'] }
 ] })
