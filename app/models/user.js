@@ -16,7 +16,8 @@ const userSchema = new mongoose.Schema({
   },
   passwordDigest: String,
   cart: {
-    type: Array
+    type: Array,
+    'default': []
   }
 }, {
   timestamps: true,
