@@ -133,31 +133,26 @@ const addproduct = (req, res, next) => {
 ).catch(next)
 }
 
-// const item = Product.findOne({
-//   title: 'Lizard'
-// }).then(product =>
-//   console.log(item)
-// ).catch(console.log('nope'))
+const getCart = (req, res, next) => {
+  User.findOne({
+    _id: req.params.id,
+    token: req.user.token
+  }).then(user => {
+    const cart = user.cart
+    console.log(cart)
+    console.log('wll')
+  }).then(() =>
+  res.sendStatus(200)
+  ).catch(next)
+}
 
-// const findProduct = () => {
-//   Product.findOne({
-//   title: 'Lizard'
-// })
-//
-// console.log(product)
-//
-// Product.findOne({
-//   title: 'Lizard'
-// }).then(product =>
-//     console.log(product))
-// User.findOne({
-//   _id: req.params.id,
-//   token: req.user.token
-// }).then(user =>
-//   // console.log(product.price) +
-//   console.log(user) +
-//   console.log(user._id)
-// ).catch(next)
+//   User.findOne({
+//     _id: req.params.id,
+//     token: req.user.token
+//   }).then(user => {
+//     console.log(user.cart)
+//   }
+//   ).catch(next)
 // }
 
 module.exports = controller({
@@ -167,7 +162,8 @@ module.exports = controller({
   signin,
   signout,
   changepw,
-  addproduct
+  addproduct,
+  getCart
 }, { before: [
   { method: authenticate, except: ['signup', 'signin'] }
 ] })
