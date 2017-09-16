@@ -5,6 +5,7 @@ const debug = require('debug')('nozama-api:users')
 const controller = require('lib/wiring/controller')
 const models = require('app/models')
 const User = models.user
+const Product = models.product
 
 const crypto = require('crypto')
 
@@ -109,15 +110,55 @@ const changepw = (req, res, next) => {
 }
 
 const addproduct = (req, res, next) => {
+  // console.log('----------REQ START-----------')
+  // console.log(req)
+  // console.log('----------REQ END-----------')
   User.findOne({
     _id: req.params.id,
     token: req.user.token
-  }).then(user =>
-    console.log(user) +
-    console.log(user._id) +
-    console.log(user.token)
-  ).catch(next)
+  }).then(user => {
+    console.log(req.body.products.title)
+    const title = req.body.products.title
+    const itemPrice = req.body.products.price
+    const item = {'title': title, 'price': itemPrice}
+    user.cart.push(item)
+    console.log(title)
+    console.log('Item Start')
+    console.log(item)
+    console.log('Item End')
+    return user.save() +
+    console.log(user.cart)
+  }).then(() =>
+  res.sendStatus(200)
+).catch(next)
 }
+
+// const item = Product.findOne({
+//   title: 'Lizard'
+// }).then(product =>
+//   console.log(item)
+// ).catch(console.log('nope'))
+
+// const findProduct = () => {
+//   Product.findOne({
+//   title: 'Lizard'
+// })
+//
+// console.log(product)
+//
+// Product.findOne({
+//   title: 'Lizard'
+// }).then(product =>
+//     console.log(product))
+// User.findOne({
+//   _id: req.params.id,
+//   token: req.user.token
+// }).then(user =>
+//   // console.log(product.price) +
+//   console.log(user) +
+//   console.log(user._id)
+// ).catch(next)
+// }
 
 module.exports = controller({
   index,
