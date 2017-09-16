@@ -117,15 +117,14 @@ const addproduct = (req, res, next) => {
     _id: req.params.id,
     token: req.user.token
   }).then(user => {
-    // console.log(req.body.products.title)
-    // const title = req.body.products.title
-    // const itemPrice = req.body.products.price
-    // const item = {title: itemPrice}
-    user.cart.push(req.body.products.title)
-    user.cart.push(req.body.products.price)
-    // console.log(title)
+    console.log(req.body.products.title)
+    const title = req.body.products.title
+    const itemPrice = req.body.products.price
+    const item = {'title': title, 'price': itemPrice}
+    user.cart.push(item)
+    console.log(title)
     console.log('Item Start')
-    // console.log(item)
+    console.log(item)
     console.log('Item End')
     return user.save() +
     console.log(user.cart)
