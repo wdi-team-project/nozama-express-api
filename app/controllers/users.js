@@ -110,25 +110,23 @@ const changepw = (req, res, next) => {
 }
 
 const addproduct = (req, res, next) => {
-  // console.log('----------REQ START-----------')
-  // console.log(req)
-  // console.log('----------REQ END-----------')
+  // finding the user
   User.findOne({
     _id: req.params.id,
     token: req.user.token
   }).then(user => {
-    console.log(req.body.products.title)
+    // setting the key values based on info sent over
     const title = req.body.products.title
     const itemPrice = req.body.products.price
     const item = {'title': title, 'price': itemPrice}
+
+    // adding the items in the user's cart
     user.cart.push(item)
-    console.log(title)
-    console.log('Item Start')
-    console.log(item)
-    console.log('Item End')
-    return user.save() +
-    console.log(user.cart)
+
+    // saving changes to user's cart
+    return user.save()
   }).then(() =>
+  // upon success send status
   res.sendStatus(200)
 ).catch(next)
 }
@@ -147,17 +145,17 @@ const getCart = (req, res, next) => {
 }
 
 const emptyCart = (req, res, next) => {
+  // finding user
   User.findOne({
     _id: req.params.id,
     token: req.user.token
   }).then(user => {
-    console.log('====== Cart Start =======')
-    console.log(user.cart)
-    console.log('====== Cart End =======')
+    // setting a user's cart back to empty
     user.cart = []
+    // saving change to user
     return user.save()
   }).then((user) =>
-  console.log(user.cart) +
+  // sending status on success
   res.sendStatus(200)
 ).catch(next)
 }
