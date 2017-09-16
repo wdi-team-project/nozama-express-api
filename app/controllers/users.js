@@ -146,14 +146,21 @@ const getCart = (req, res, next) => {
   ).catch(next)
 }
 
-//   User.findOne({
-//     _id: req.params.id,
-//     token: req.user.token
-//   }).then(user => {
-//     console.log(user.cart)
-//   }
-//   ).catch(next)
-// }
+const emptyCart = (req, res, next) => {
+  User.findOne({
+    _id: req.params.id,
+    token: req.user.token
+  }).then(user => {
+    console.log('====== Cart Start =======')
+    console.log(user.cart)
+    console.log('====== Cart End =======')
+    user.cart = []
+    return user.save()
+  }).then((user) =>
+  console.log(user.cart) +
+  res.sendStatus(200)
+).catch(next)
+}
 
 module.exports = controller({
   index,
@@ -163,7 +170,8 @@ module.exports = controller({
   signout,
   changepw,
   addproduct,
-  getCart
+  getCart,
+  emptyCart
 }, { before: [
   { method: authenticate, except: ['signup', 'signin'] }
 ] })
