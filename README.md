@@ -21,7 +21,7 @@ Our prompt was to build Nozama, a site similar to Amazon.  We decided to act as 
 
 - Front End Client Deployed: Coming Soon
 
-- [API Repo](https://github.com/wdi-team-project/nozama-client)
+- [Client Repository](https://github.com/wdi-team-project/nozama-client)
 
 ## Routes
 
