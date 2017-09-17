@@ -5,6 +5,7 @@ const debug = require('debug')('nozama-api:users')
 const controller = require('lib/wiring/controller')
 const models = require('app/models')
 const User = models.user
+const Product = models.product
 
 const crypto = require('crypto')
 
@@ -108,13 +109,69 @@ const changepw = (req, res, next) => {
   ).catch(makeErrorHandler(res, next))
 }
 
+const addproduct = (req, res, next) => {
+  // console.log('----------REQ START-----------')
+  // console.log(req)
+  // console.log('----------REQ END-----------')
+  User.findOne({
+    _id: req.params.id,
+    token: req.user.token
+  }).then(user => {
+    console.log(req.body.products.title)
+    const title = req.body.products.title
+    const itemPrice = req.body.products.price
+    const item = {'title': title, 'price': itemPrice}
+    user.cart.push(item)
+    console.log(title)
+    console.log('Item Start')
+    console.log(item)
+    console.log('Item End')
+    return user.save() +
+    console.log(user.cart)
+  }).then(() =>
+  res.sendStatus(200)
+).catch(next)
+}
+
+const getCart = (req, res, next) => {
+  User.findOne({
+    _id: req.params.id,
+    token: req.user.token
+  }).then(user => {
+    const cart = user.cart
+    console.log(cart)
+    console.log('wll')
+  }).then(() =>
+  res.sendStatus(200)
+  ).catch(next)
+}
+
+const emptyCart = (req, res, next) => {
+  User.findOne({
+    _id: req.params.id,
+    token: req.user.token
+  }).then(user => {
+    console.log('====== Cart Start =======')
+    console.log(user.cart)
+    console.log('====== Cart End =======')
+    user.cart = []
+    return user.save()
+  }).then((user) =>
+  console.log(user.cart) +
+  res.sendStatus(200)
+).catch(next)
+}
+
 module.exports = controller({
   index,
   show,
   signup,
   signin,
   signout,
-  changepw
+  changepw,
+  addproduct,
+  getCart,
+  emptyCart
 }, { before: [
   { method: authenticate, except: ['signup', 'signin'] }
 ] })

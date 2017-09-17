@@ -14,7 +14,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  passwordDigest: String
+  passwordDigest: String,
+  cart: {
+    type: Array,
+    'default': []
+  }
 }, {
   timestamps: true,
   toJSON: {

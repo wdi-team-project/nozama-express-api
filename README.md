@@ -1,20 +1,37 @@
 # Nozama - Back End API
-Team Project By:
-- Ash Trull
-- Will Britton
+
+<p align="center">
+  <b>Team Project By: </b><br><br>
+  <a href="https://github.com/Aimeelr08">Aimee Ramirez</a> |
+  <a href="https://github.com/ashtrull">Ash Trull</a> |
+  <a href="https://github.com/cmigz">Christian Migncca</a> |
+  <a href="https://github.com/wjbritton">Will Britton</a>
+  <br><br>
+</p>
 
 ## Introduction
 
+Welcome to the Back End repository for our third project with GA, our team project.  We all learned quite a lot throught the process.  It was a great team effort and we look forward to continue working to really polish it up.
+
+Our prompt was to build Nozama, a site similar to Amazon.  We decided to act as though we were amazon rolling our a new food shopping piece of their site since they accquired Whole Foods.  We named it Peach.
+
 ## Deployed Links
 
-- Deployed API Link:
+- Deployed API Link: Coming Soon
 
-- Front End Client Deployed:
+- Front End Client Deployed: Coming Soon
 
-- Front End Client Repository:
+- [API Repo](https://github.com/wdi-team-project/nozama-client)
 
 ## Routes
 
-## Project Management
-On Waffle
-[![Stories in Ready](https://badge.waffle.io/wdi-team-project/nozama-express-api.png?label=ready&title=Ready)](http://waffle.io/wdi-team-project/nozama-express-api)
+|          Action          | Method |       URL       | Controller Action |
+|:------------------------:|:------:|:---------------:|:-----------------:|
+|       User Sign Up       |  POST  |     /sign-up    |    users#signup   |
+|       User Sign In       |  POST  |     /sign-in    |    users#signin   |
+|       User Sign Out      | DELETE |  /sign-out/:id  |   users#signout   |
+|    Add Product to Cart   |  PATCH |    /users/:id   |  users#addproduct |
+| Empty Products From Cart |  PATCH | /users/:id/cart |  users#emptyCart  |
+|      Get User's Cart     |   GET  |    /users/:id   |   users#getCart   |
+|     Get All Products     |   GET  |    /products    |   products#index  |
+|     Create a Product     |  POST  |    /products    |  products#create  |
