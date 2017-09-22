@@ -34,10 +34,7 @@ const show = (req, res, next) => {
 }
 
 const destroy = (req, res, next) => {
-  Product.findById(req.params.id)
-  .then(product => {
-    req.product.remove()
-  })
+  req.product.remove()
     .then(() => res.sendStatus(204))
     .catch(next)
 }
@@ -47,4 +44,8 @@ module.exports = controller({
   create,
   show,
   destroy
+}, {
+  before: [
+    {method: setModel(Product), only: ['destroy']}
+  ]
 })
