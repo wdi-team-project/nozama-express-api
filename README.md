@@ -15,11 +15,11 @@ Welcome to the Back End repository for our third project with GA, our team proje
 
 Our prompt was to build Nozama, a site similar to Amazon.  We decided to act as though we were amazon rolling our a new food shopping piece of their site since they accquired Whole Foods.  We named it Peach.
 
-## Deployed Links
+## Relevant Links
 
-- Deployed API Link: https://limitless-journey-76568.herokuapp.com/
+- [Deployed Client](https://wdi-team-project.github.io/nozama-client/)
 
-- Front End Client Deployed: https://wdi-team-project.github.io/nozama-client/
+- [Deployed API](https://limitless-journey-76568.herokuapp.com/)
 
 - [Client Repository](https://github.com/wdi-team-project/nozama-client)
 
