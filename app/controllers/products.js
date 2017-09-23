@@ -27,7 +27,25 @@ const create = (req, res, next) => {
     .catch(next)
 }
 
+const show = (req, res, next) => {
+  Product.findById(req.params.id)
+  .then(product => product ? res.json({ product }) : next())
+  .catch(next)
+}
+
+const destroy = (req, res, next) => {
+  req.product.remove()
+    .then(() => res.sendStatus(204))
+    .catch(next)
+}
+
 module.exports = controller({
   index,
-  create
+  create,
+  show,
+  destroy
+}, {
+  before: [
+    {method: setModel(Product), only: ['destroy']}
+  ]
 })
