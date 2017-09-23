@@ -33,8 +33,19 @@ const show = (req, res, next) => {
   .catch(next)
 }
 
+const destroy = (req, res, next) => {
+  req.product.remove()
+    .then(() => res.sendStatus(204))
+    .catch(next)
+}
+
 module.exports = controller({
   index,
   create,
-  show
+  show,
+  destroy
+}, {
+  before: [
+    {method: setModel(Product), only: ['destroy']}
+  ]
 })
