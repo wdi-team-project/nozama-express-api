@@ -35,3 +35,5 @@ Our prompt was to build Nozama, a site similar to Amazon.  We decided to act as 
 |      Get User's Cart     |   GET  |    /users/:id   |   users#getCart   |
 |     Get All Products     |   GET  |    /products    |   products#index  |
 |     Create a Product     |  POST  |    /products    |  products#create  |
+|      Get A Product       |   GET  |  /products/:id  |   products#show   |
+|     Delete a Product     | DELETE |  /products/:id  |  products#destroy |
