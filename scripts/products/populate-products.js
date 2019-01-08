@@ -1,5 +1,5 @@
 // insert Document
-db.products.insertMany(
+aim-application-api.products.insertMany(
   [{
     title: 'Lizard',
     price: 23.99,
