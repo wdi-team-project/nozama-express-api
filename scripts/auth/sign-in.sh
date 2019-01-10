@@ -3,7 +3,7 @@
 API="http://aim-application-api.herokuapp.com"
 URL_PATH="/sign-in"
 
-EMAIL="duck@duck.com"
+EMAIL="goose@duck.com"
 PASSWORD="duck"
 PASSWORD_CONFIRMATION="duck"
 
