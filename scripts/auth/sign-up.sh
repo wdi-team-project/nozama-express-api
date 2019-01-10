@@ -1,8 +1,12 @@
 #!/bin/bash
 
-API="http://localhost:4741"
+
+API="http://aim-application-api.herokuapp.com"
 URL_PATH="/sign-up"
 
+EMAIL="ducky@duck.com"
+PASSWORD="duck"
+PASSWORD_CONFIRMATION="duck"
 curl "${API}${URL_PATH}" \
   --include \
   --request POST \
