@@ -4,7 +4,7 @@
 API="http://aim-application-api.herokuapp.com"
 URL_PATH="/sign-up"
 
-EMAIL="d@duck.com"
+EMAIL="duck@duck.com"
 PASSWORD="duck"
 PASSWORD_CONFIRMATION="duck"
 curl "${API}${URL_PATH}" \
